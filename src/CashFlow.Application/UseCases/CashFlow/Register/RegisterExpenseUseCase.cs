@@ -1,7 +1,6 @@
-﻿
-using CashFlow.Communication.Enum;
-using CashFlow.Communication.Reponse;
+﻿using CashFlow.Communication.Reponse;
 using CashFlow.Communication.Request;
+using CashFlow.Exception.ExceptionBase;
 
 namespace CashFlow.Application.UseCases.CashFlow.Register;
 
@@ -10,10 +9,7 @@ public class RegisterExpenseUseCase
     public ResponseRegisteredExpenseJson Execute(RequestRegisterExpenseJson request)
     {
         Validate(request);
-        return new ResponseRegisteredExpenseJson
-        {
-            Title = request.Title
-        };
+        return new ResponseRegisteredExpenseJson();
     }
     private void Validate(RequestRegisterExpenseJson request)
     {
@@ -22,7 +18,7 @@ public class RegisterExpenseUseCase
         if (result.IsValid == false)
         {
             var errorMessages = result.Errors.Select(error => error.ErrorMessage).ToList();
-            throw new ArgumentException(string.Join(", ", errorMessages));
+            throw new ErrorOnValidationException(errorMessages);
         }
     }
 }
