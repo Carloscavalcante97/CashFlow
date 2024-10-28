@@ -132,4 +132,7 @@
   <data name="PAYMENTTYPE_ERROR" xml:space="preserve">
     <value>PaymentType is invalid</value>
   </data>
+  <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
+    <value>Not found expense</value>
+  </data>
 </root>

@@ -132,4 +132,7 @@
   <data name="PAYMENTTYPE_ERROR" xml:space="preserve">
     <value>O tipo de pagamento é inválido</value>
   </data>
+  <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
+    <value>Despesa não encontrada</value>
+  </data>
 </root>

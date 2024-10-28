@@ -59,7 +59,7 @@ namespace CashFlow.Exception {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Do not accept future dates.
         /// </summary>
@@ -68,7 +68,16 @@ namespace CashFlow.Exception {
                 return ResourceManager.GetString("DATE_ERROR", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Not found expense.
+        /// </summary>
+        public static string EXPENSE_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("EXPENSE_NOT_FOUND", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to The amount must be bigger than 0.
         /// </summary>
@@ -77,7 +86,7 @@ namespace CashFlow.Exception {
                 return ResourceManager.GetString("GREATER_THAN_0", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to PaymentType is invalid.
         /// </summary>
@@ -86,7 +95,7 @@ namespace CashFlow.Exception {
                 return ResourceManager.GetString("PAYMENTTYPE_ERROR", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Title Required.
         /// </summary>
@@ -95,7 +104,7 @@ namespace CashFlow.Exception {
                 return ResourceManager.GetString("TITLE_REQUIRED", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Unknown Error.
         /// </summary>
