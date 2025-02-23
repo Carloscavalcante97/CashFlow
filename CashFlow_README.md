@@ -75,19 +75,6 @@ dotnet test
 
 ---
 
-## 🤝 Contribuição
-
-Contribuições são sempre bem-vindas! Se deseja colaborar com o projeto, siga os passos:
-
-1. **Fork o Repositório**: Clique em "Fork" no topo da página do repositório.
-2. **Crie uma Branch**: Crie uma nova branch para sua feature ou correção.
-3. **Faça o Commit das Suas Alterações**: Descreva claramente as mudanças realizadas.
-4. **Envie um Pull Request**: Submeta o pull request para revisão.
-
-Antes de contribuir, leia o arquivo `CONTRIBUTING.md` (se disponível) para entender as diretrizes do projeto.
-
----
-
 ## 📜 Licença
 
 Este projeto está licenciado sob a **Licença MIT**. Para mais detalhes, consulte o arquivo `LICENSE` no repositório.
@@ -99,7 +86,7 @@ Este projeto está licenciado sob a **Licença MIT**. Para mais detalhes, consul
 Para dúvidas, sugestões ou suporte, entre em contato:
 
 - **GitHub**: [Carloscavalcante97](https://github.com/Carloscavalcante97)
-- **Email**: [carlos@example.com](mailto:carlos@example.com)
+- **Email**: [carlos.developer@icloud.com](mailto:carlos.developer@icloud.com)
 
 ---
 
