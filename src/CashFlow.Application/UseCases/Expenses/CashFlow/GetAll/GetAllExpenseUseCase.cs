@@ -3,13 +3,13 @@ using AutoMapper;
 using CashFlow.Communication.Reponses;
 using CashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Application.UseCases.CashFlow.GetAll;
+namespace CashFlow.Application.UseCases.Expenses.CashFlow.GetAll;
 
 public class GetAllExpenseUseCase : IGetAllExpenseUseCase
 {
-    private readonly IExpensesRepository _repository;
+    private readonly IExpensesReadOnlyRepository _repository;
     private readonly IMapper _mapper;
-    public GetAllExpenseUseCase(IExpensesRepository repository, IMapper mapper)
+    public GetAllExpenseUseCase(IExpensesReadOnlyRepository repository, IMapper mapper)
     {
         _repository = repository;
         _mapper = mapper;

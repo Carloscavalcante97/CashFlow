@@ -1,6 +1,4 @@
-﻿
-namespace CashFlow.Exception.ExceptionBase;
-
+﻿namespace CashFlow.Exception.ExceptionBase;
 public abstract class CashFlowException : SystemException
 {
     
@@ -8,4 +6,7 @@ public abstract class CashFlowException : SystemException
     {
         
     }
+
+    public abstract int StatusCode { get; }
+    public abstract List<string> GetErrors();
 }

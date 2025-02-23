@@ -4,9 +4,9 @@ using CashFlow.Communication.Request;
 
 namespace CommunTestUtilities.Request;
 
-public class RequestRegisterExpenseJsonBuilder
+public class RequestExpenseJsonBuilder
 {
-    public static RequestRegisterExpenseJson Build()
+    public static RequestExpenseJson Build()
     {
 
         /* 
@@ -20,7 +20,7 @@ public class RequestRegisterExpenseJsonBuilder
             Amount = faker.Finance.Amount(),
             PaymentType = faker.PickRandom<CashFlow.Communication.Enum.PaymentType>()
         }; */
-        return new Faker<RequestRegisterExpenseJson>()
+        return new Faker<RequestExpenseJson>()
             .RuleFor(rF => rF.Title, faker => faker.Commerce.ProductName())
             .RuleFor(rF => rF.Date, faker => faker.Date.Past())
             .RuleFor(rF => rF.Description, faker => faker.Commerce.ProductDescription())
