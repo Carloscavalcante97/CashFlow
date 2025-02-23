@@ -8,7 +8,7 @@ public class ErrorOnValidationException : CashFlowException
 
     public override int StatusCode => (int)HttpStatusCode.BadRequest;
 
-    public ErrorOnValidationException(List<string> errorMessage): base(string.Empty)
+    public ErrorOnValidationException(List<string> errorMessage) : base(string.Empty)
     {
         _errors = errorMessage;
     }

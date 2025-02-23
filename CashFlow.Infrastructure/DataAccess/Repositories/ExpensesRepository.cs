@@ -21,11 +21,11 @@ internal class ExpensesRepository : IExpensesReadOnlyRepository, IExpensesWriteO
     {
         return await _dbContext.Expenses.AsNoTracking().ToListAsync();
     }
-     async Task<Expense?> IExpensesReadOnlyRepository.GetById(long id)
+    async Task<Expense?> IExpensesReadOnlyRepository.GetById(long id)
     {
         return await _dbContext.Expenses.AsNoTracking().FirstOrDefaultAsync(expense => expense.Id == id);
     }
-     async Task<Expense?> IExpensesUpdateOnlyRepository.GetById(long id)
+    async Task<Expense?> IExpensesUpdateOnlyRepository.GetById(long id)
     {
         return await _dbContext.Expenses.FirstOrDefaultAsync(expense => expense.Id == id);
     }
@@ -36,10 +36,10 @@ internal class ExpensesRepository : IExpensesReadOnlyRepository, IExpensesWriteO
         {
             return false;
         }
-        
-            _dbContext.Expenses.Remove(result);
 
-            return true;
+        _dbContext.Expenses.Remove(result);
+
+        return true;
     }
 
     public void Update(Expense expense)
@@ -51,11 +51,11 @@ internal class ExpensesRepository : IExpensesReadOnlyRepository, IExpensesWriteO
     {
         var startDate = new DateTime(year: date.Year, month: date.Month, day: 1).Date;
 
-        var daysInMonth = DateTime.DaysInMonth(year: date.Year,month: date.Month);
+        var daysInMonth = DateTime.DaysInMonth(year: date.Year, month: date.Month);
 
         var endDate = new DateTime(year: date.Year, month: date.Month, day: daysInMonth, hour: 23, minute: 59, second: 59);
 
-        var result = await 
+        var result = await
             _dbContext
             .Expenses
             .AsNoTracking()

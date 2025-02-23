@@ -5,7 +5,7 @@ using ClosedXML.Excel;
 
 namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 {
-   public class GenerateExpensesReportExcelUseCase : IGenerateExpensesReportExcelUseCase
+    public class GenerateExpensesReportExcelUseCase : IGenerateExpensesReportExcelUseCase
     {
         private const string CURRENCY_SYMBOL = "$";
         private readonly IExpensesReadOnlyRepository _repository;
@@ -16,7 +16,7 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
         public async Task<byte[]> Execute(DateOnly month)
         {
             var expenses = await _repository.FilterByMonth(month);
-            if(expenses.Count == 0)
+            if (expenses.Count == 0)
             {
                 return [];
             }
@@ -25,16 +25,16 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
 
             workBook.Author = "Antônio Cavalcante";
 
-            workBook.Style.Font.FontSize=12;
+            workBook.Style.Font.FontSize = 12;
 
             workBook.Style.Font.FontName = "Times New Roman";
 
-           var worksheet = workBook.Worksheets.Add(month.ToString("Y"));
-            
+            var worksheet = workBook.Worksheets.Add(month.ToString("Y"));
+
             InsertHeader(worksheet);
 
             var raw = 2;
-           foreach (var expense in expenses)
+            foreach (var expense in expenses)
             {
                 worksheet.Cell($"A{raw}").Value = expense.Title;
                 worksheet.Cell($"B{raw}").Value = expense.Date;
@@ -78,6 +78,6 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
             worksheet.Cell("E1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             worksheet.Cell("D1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Right);
         }
-       
+
     }
 }

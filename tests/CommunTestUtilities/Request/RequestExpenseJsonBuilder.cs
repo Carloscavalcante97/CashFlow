@@ -26,6 +26,6 @@ public class RequestExpenseJsonBuilder
             .RuleFor(rF => rF.Description, faker => faker.Commerce.ProductDescription())
             .RuleFor(rF => rF.Amount, faker => faker.Random.Decimal(min: 1, max: 1000))
             .RuleFor(rF => rF.PaymentType, faker => faker.PickRandom<CashFlow.Communication.Enum.PaymentType>());
-        
+
     }
 }

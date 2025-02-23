@@ -13,7 +13,7 @@ namespace CashFlow.Application.UseCases.Expenses.Update
         private readonly IUnitOfWork _unitOfWork;
         private readonly IExpensesUpdateOnlyRepository _repository;
 
-        public UpdateExpenseUseCase(IMapper mapper, IUnitOfWork unitOfWork, IExpensesUpdateOnlyRepository repository )
+        public UpdateExpenseUseCase(IMapper mapper, IUnitOfWork unitOfWork, IExpensesUpdateOnlyRepository repository)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;
