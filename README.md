@@ -77,7 +77,7 @@ dotnet test
 
 ## 📜 Licença
 
-Este projeto está licenciado sob a **Licença MIT**. Para mais detalhes, consulte o arquivo `LICENSE` no repositório.
+Este projeto está licenciado sob a **Licença MIT**. Para mais detalhes, consulte o arquivo [LICENSE](./LICENSE).
 
 ---
 
