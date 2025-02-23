@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README - CashFlow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>CashFlow</h1>
+    <p>Bem-vindo ao <strong>CashFlow</strong>, uma aplicação desenvolvida em C# para auxiliar no controle financeiro pessoal ou empresarial. O CashFlow permite registrar receitas e despesas, calcular o saldo disponível e gerar relatórios financeiros detalhados, garantindo a integridade dos dados através de validações robustas.</p>
+
+    <h2>Funcionalidades</h2>
+    <ul>
+        <li><strong>Registro de Transações</strong>: Adicione entradas (receitas) e saídas (despesas) financeiras com facilidade.</li>
+        <li><strong>Cálculo de Saldo</strong>: Obtenha automaticamente o saldo disponível com base nas transações registradas.</li>
+        <li><strong>Relatórios Financeiros</strong>: Gere relatórios detalhados para análise financeira e tomada de decisões informadas.</li>
+        <li><strong>Exportação de Despesas para Excel</strong>: Possibilidade de exportar as despesas registradas em formato <code>.xlsx</code>.</li>
+        <li><strong>Validações de Dados</strong>: Assegure a integridade e consistência dos dados financeiros através de validações implementadas.</li>
+    </ul>
+
+    <h2>Pré-requisitos</h2>
+    <ul>
+        <li>.NET SDK 6.0 ou superior (<a href="https://dotnet.microsoft.com/download">Baixar aqui</a>).</li>
+        <li>SQL Server ou outro banco de dados compatível.</li>
+    </ul>
+
+    <h2>Configuração do Ambiente</h2>
+    <pre><code>git clone https://github.com/Carloscavalcante97/CashFlow.git
+cd CashFlow
+dotnet restore
+dotnet ef database update</code></pre>
+
+    <h2>Execução da Aplicação</h2>
+    <pre><code>dotnet run --project src/CashFlow</code></pre>
+    <p>A aplicação estará disponível em <code>https://localhost:5001</code> ou conforme configurado.</p>
+
+    <h2>Exportação de Despesas para Excel</h2>
+    <p>Para exportar as despesas para Excel:</p>
+    <ol>
+        <li>Acesse a funcionalidade de <strong>Relatórios</strong> dentro da aplicação.</li>
+        <li>Escolha a opção de <strong>Exportação</strong> e selecione <strong>Excel (.xlsx)</strong>.</li>
+        <li>O sistema gerará um arquivo Excel com todas as despesas registradas.</li>
+    </ol>
+
+    <h2>Testes</h2>
+    <pre><code>dotnet test</code></pre>
+
+    <h2>Contribuição</h2>
+    <p>Contribuições são bem-vindas! Siga os passos:</p>
+    <ol>
+        <li>Fork o repositório.</li>
+        <li>Crie uma branch.</li>
+        <li>Faça commit das alterações.</li>
+        <li>Envie um pull request.</li>
+    </ol>
+
+    <h2>Licença</h2>
+    <p>Este projeto está licenciado sob a licença MIT. Para mais detalhes, consulte o arquivo <code>LICENSE</code>.</p>
+
+    <h2>Contato</h2>
+    <ul>
+        <li><strong>GitHub</strong>: <a href="https://github.com/Carloscavalcante97">Carloscavalcante97</a></li>
+        <li><strong>Email</strong>: <a href="mailto:carlos@example.com">carlos@example.com</a></li>
+    </ul>
+</body>
+</html>
