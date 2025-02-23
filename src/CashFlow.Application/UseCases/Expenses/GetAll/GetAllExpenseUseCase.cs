@@ -1,9 +1,10 @@
 ﻿
 using AutoMapper;
+using CashFlow.Communication.Reponse;
 using CashFlow.Communication.Reponses;
 using CashFlow.Domain.Repositories.Expenses;
 
-namespace CashFlow.Application.UseCases.Expenses.CashFlow.GetAll;
+namespace CashFlow.Application.UseCases.Expenses.GetAll;
 
 public class GetAllExpenseUseCase : IGetAllExpenseUseCase
 {

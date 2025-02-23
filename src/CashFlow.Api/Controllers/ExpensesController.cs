@@ -1,8 +1,8 @@
-﻿using CashFlow.Application.UseCases.Expenses.CashFlow.Delete;
-using CashFlow.Application.UseCases.Expenses.CashFlow.GetAll;
-using CashFlow.Application.UseCases.Expenses.CashFlow.GetExpenseById;
-using CashFlow.Application.UseCases.Expenses.CashFlow.Register;
-using CashFlow.Application.UseCases.Expenses.CashFlow.Update;
+﻿using CashFlow.Application.UseCases.Expenses.Delete;
+using CashFlow.Application.UseCases.Expenses.GetAll;
+using CashFlow.Application.UseCases.Expenses.GetExpenseById;
+using CashFlow.Application.UseCases.Expenses.Register;
+using CashFlow.Application.UseCases.Expenses.Update;
 using CashFlow.Communication.Reponse;
 using CashFlow.Communication.Reponses;
 using CashFlow.Communication.Request;
@@ -26,7 +26,7 @@ public class ExpensesController : ControllerBase
         
         }
     [HttpGet]
-    [ProducesResponseType(typeof(ResponseExpenseJson), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(RequestExpensesJson), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status204NoContent)]
     public async Task<IActionResult> GetAllExpenses(
         [FromServices] IGetAllExpenseUseCase useCase 

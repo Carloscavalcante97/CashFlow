@@ -1,6 +1,6 @@
 ﻿using CashFlow.Communication.Request;
 
-namespace CashFlow.Application.UseCases.Expenses.CashFlow.Update
+namespace CashFlow.Application.UseCases.Expenses.Update
 {
     public interface IUpdateExpenseUseCase
     {

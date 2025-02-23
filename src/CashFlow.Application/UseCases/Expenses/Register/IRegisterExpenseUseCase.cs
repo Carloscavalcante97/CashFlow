@@ -1,7 +1,7 @@
 ﻿using CashFlow.Communication.Reponse;
 using CashFlow.Communication.Request;
 
-namespace CashFlow.Application.UseCases.Expenses.CashFlow.Register
+namespace CashFlow.Application.UseCases.Expenses.Register
 {
     public interface IRegisterExpenseUseCase
     {

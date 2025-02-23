@@ -5,7 +5,7 @@ using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionBase;
 
-namespace CashFlow.Application.UseCases.Expenses.CashFlow.Update
+namespace CashFlow.Application.UseCases.Expenses.Update
 {
     public class UpdateExpenseUseCase : IUpdateExpenseUseCase
     {

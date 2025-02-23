@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashFlow.Application.UseCases.Expenses.CashFlow.Delete
+namespace CashFlow.Application.UseCases.Expenses.Delete
 {
    public class DeleteExpenseUseCase : IDeleteExpenseUseCase
     {
