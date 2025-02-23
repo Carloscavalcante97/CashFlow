@@ -144,4 +144,13 @@
   <data name="ELETRONIC_TRANSFER" xml:space="preserve">
     <value>Eletronic Transfer</value>
   </data>
+  <data name="TOTAL" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="EXPENSES_FOR" xml:space="preserve">
+    <value>Expenses for</value>
+  </data>
+  <data name="TOTAL_SPENT_IN" xml:space="preserve">
+    <value>Total spent in {0}</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
 ﻿using CashFlow.Domain.Enum;
+using CashFlow.Domain.Enums.Extensions;
 using CashFlow.Domain.Reports;
 using CashFlow.Domain.Repositories.Expenses;
 using ClosedXML.Excel;
@@ -32,18 +33,22 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
             var worksheet = workBook.Worksheets.Add(month.ToString("Y"));
 
             InsertHeader(worksheet);
-
+            decimal expensesSum = 0;
             var raw = 2;
             foreach (var expense in expenses)
             {
                 worksheet.Cell($"A{raw}").Value = expense.Title;
                 worksheet.Cell($"B{raw}").Value = expense.Date;
-                worksheet.Cell($"C{raw}").Value = ConvertPaymentType(expense.PaymentType);
+                worksheet.Cell($"C{raw}").Value = expense.PaymentType.PaymentTypeToString();
                 worksheet.Cell($"D{raw}").Value = expense.Amount;
                 worksheet.Cell($"D{raw}").Style.NumberFormat.Format = $"-{CURRENCY_SYMBOL} #,##0.00";
                 worksheet.Cell($"E{raw}").Value = expense.Description;
+                expensesSum += expense.Amount;               
                 raw++;
             }
+            worksheet.Cell("F2").Value = expensesSum;
+            worksheet.Cell("F2").Style.NumberFormat.Format = $"-{CURRENCY_SYMBOL} #,##0.00";
+
             worksheet.Columns().AdjustToContents();
 
             var file = new MemoryStream();
@@ -53,16 +58,7 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
             return file.ToArray();
 
         }
-        private string ConvertPaymentType(PaymentType payment)
-        {
-            return payment switch
-            {
-                PaymentType.Cash => ResourceReportGenerationMessage.CASH,
-                PaymentType.CreditCard => ResourceReportGenerationMessage.CREDIT_CARD,
-                PaymentType.DebitCard => ResourceReportGenerationMessage.DEBIT_CARD,
-                _ => string.Empty
-            };
-        }
+       
         private void InsertHeader(IXLWorksheet worksheet)
         {
             worksheet.Cell("A1").Value = ResourceReportGenerationMessage.TITLE;
@@ -70,13 +66,15 @@ namespace CashFlow.Application.UseCases.Expenses.Reports.Excel
             worksheet.Cell("C1").Value = ResourceReportGenerationMessage.PAYMENT_TYPE;
             worksheet.Cell("D1").Value = ResourceReportGenerationMessage.AMOUNT;
             worksheet.Cell("E1").Value = ResourceReportGenerationMessage.DESCRIPTION;
-            worksheet.Cells("A1:E1").Style.Font.Bold = true;
-            worksheet.Cells("A1:E1").Style.Fill.BackgroundColor = XLColor.Green;
+            worksheet.Cell("F1").Value = ResourceReportGenerationMessage.TOTAL;
+            worksheet.Cells("A1:F1").Style.Font.Bold = true;
+            worksheet.Cells("A1:F1").Style.Fill.BackgroundColor = XLColor.Green;
             worksheet.Cell("A1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             worksheet.Cell("B1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             worksheet.Cell("C1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             worksheet.Cell("E1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
             worksheet.Cell("D1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Right);
+            worksheet.Cell("F1").Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Right);
         }
 
     }

@@ -17,7 +17,7 @@
   <ItemGroup>
     <EmbeddedResource Update="Reports\ResourceReportGenerationMessage.resx">
       <LastGenOutput>ResourceReportGenerationMessage.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
 

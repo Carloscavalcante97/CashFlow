@@ -29,7 +29,7 @@ namespace CashFlow.Domain.Reports {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public ResourceReportGenerationMessage() {
+        internal ResourceReportGenerationMessage() {
         }
         
         /// <summary>
@@ -59,7 +59,7 @@ namespace CashFlow.Domain.Reports {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Amount.
         /// </summary>
@@ -68,7 +68,7 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("AMOUNT", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Cash.
         /// </summary>
@@ -77,7 +77,7 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("CASH", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Credit Card.
         /// </summary>
@@ -86,7 +86,7 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("CREDIT_CARD", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Date.
         /// </summary>
@@ -95,7 +95,7 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("DATE", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Debit Card.
         /// </summary>
@@ -104,7 +104,7 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("DEBIT_CARD", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Description.
         /// </summary>
@@ -113,7 +113,7 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("DESCRIPTION", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Eletronic Transfer.
         /// </summary>
@@ -122,7 +122,16 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("ELETRONIC_TRANSFER", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Expenses for.
+        /// </summary>
+        public static string EXPENSES_FOR {
+            get {
+                return ResourceManager.GetString("EXPENSES_FOR", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Payment Type.
         /// </summary>
@@ -131,13 +140,31 @@ namespace CashFlow.Domain.Reports {
                 return ResourceManager.GetString("PAYMENT_TYPE", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Title.
         /// </summary>
         public static string TITLE {
             get {
                 return ResourceManager.GetString("TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Total.
+        /// </summary>
+        public static string TOTAL {
+            get {
+                return ResourceManager.GetString("TOTAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Total spent in {0}.
+        /// </summary>
+        public static string TOTAL_SPENT_IN {
+            get {
+                return ResourceManager.GetString("TOTAL_SPENT_IN", resourceCulture);
             }
         }
     }
