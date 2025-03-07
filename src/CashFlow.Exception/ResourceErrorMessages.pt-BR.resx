@@ -135,4 +135,22 @@
   <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
     <value>Despesa não encontrada</value>
   </data>
+  <data name="NAME_REQUIRED" xml:space="preserve">
+    <value>Nome é obrigatório</value>
+  </data>
+  <data name="EMAIL_REQUIRED" xml:space="preserve">
+    <value>Email é obrigatório</value>
+  </data>
+  <data name="PASSWORD_REQUIRED" xml:space="preserve">
+    <value>Senha é obrigatório</value>
+  </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>O Email é inválido</value>
+  </data>
+  <data name="INVALID_PASSWORD" xml:space="preserve">
+    <value>Senha inválida</value>
+  </data>
+  <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
+    <value>Email já cadastrado</value>
+  </data>
 </root>
