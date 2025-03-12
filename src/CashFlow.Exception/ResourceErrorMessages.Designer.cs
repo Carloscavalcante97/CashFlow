@@ -133,6 +133,15 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Password or email invalid.
+        /// </summary>
+        public static string PASSWORD_OR_EMAIL_INVALID {
+            get {
+                return ResourceManager.GetString("PASSWORD_OR_EMAIL_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The password is required.
         /// </summary>
         public static string PASSWORD_REQUIRED {

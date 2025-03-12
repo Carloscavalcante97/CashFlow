@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using CashFlow.Domain.Repositories;
 using CashFlow.Domain.Security.Cryptography;
 using CashFlow.Domain.Repositories.User;
+using CashFlow.Domain.Security.Tokens;
+using CashFlow.Infrastructure.Security.Tokens;
 namespace CashFlow.Infrastructure
 {
     public static class DependencyInjectionExtension
@@ -16,8 +18,15 @@ namespace CashFlow.Infrastructure
             AddRepositories(services);
             AddDbContext(services, configuration);
             AddHasher(services);
+            AddToken(services, configuration);
         }
+        private static void AddToken(IServiceCollection services, IConfiguration configuration)
+        {
+            var signingKey = configuration.GetValue<string>("Settings:Jwt:SigningKey");
+            var expirationTimeMinutes = configuration.GetValue<uint>("Settings:Jwt:ExpiresMinutes");
 
+           services.AddScoped<IAcessTokenGenerator>(config => new JwtTokenGenerator(expirationTimeMinutes, signingKey!));
+        }
         private static void AddRepositories(IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -35,7 +44,7 @@ namespace CashFlow.Infrastructure
         }
         private static void AddHasher(IServiceCollection services)
         {
-            services.AddScoped<IPasswordEncripter, Security.BCrypt>();
+            services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
         }
     }
 }

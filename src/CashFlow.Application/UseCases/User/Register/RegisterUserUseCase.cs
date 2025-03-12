@@ -4,6 +4,7 @@ using CashFlow.Communication.Requests;
 using CashFlow.Domain.Repositories;
 using CashFlow.Domain.Repositories.User;
 using CashFlow.Domain.Security.Cryptography;
+using CashFlow.Domain.Security.Tokens;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionBase;
 
@@ -13,21 +14,24 @@ namespace CashFlow.Application.UseCases.User.Register
     {
         private readonly IMapper _mapper;
         private readonly IPasswordEncripter _encripter;
-        private readonly IUserReadOnlyRepository     _userRepository;
+        private readonly IUserReadOnlyRepository _userRepository;
         private readonly IUserWriteOnlyRepository _userWriteOnlyRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IAcessTokenGenerator _tokenGenerator;
         public RegisterUserUseCase(
             IMapper mapper,
             IPasswordEncripter encripter,
             IUserReadOnlyRepository userRepository,
             IUnitOfWork unitOfWork,
-            IUserWriteOnlyRepository userWriteOnlyRepository)
+            IUserWriteOnlyRepository userWriteOnlyRepository,
+            IAcessTokenGenerator tokenGenerator)
         {
             _mapper = mapper;
             _encripter = encripter;
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
-            _userWriteOnlyRepository = userWriteOnlyRepository; 
+            _userWriteOnlyRepository = userWriteOnlyRepository;
+            _tokenGenerator = tokenGenerator;
 
 
         }
@@ -38,13 +42,18 @@ namespace CashFlow.Application.UseCases.User.Register
             var user = _mapper.Map<Domain.Entities.User>(request);
             user.Password = _encripter.Encript(request.Password);
             user.UserIdentifier = Guid.NewGuid();
+            
 
             await _userWriteOnlyRepository.Add(user);
+
             await _unitOfWork.Commit();
-            return new ResponseRegisteredUserJson
+
+            var result = new ResponseRegisteredUserJson
             {
                 Name = user.Name,
+                Token = _tokenGenerator.Generate(user)
             };
+            return result;
         }
         private async Task Validate(RequestRegisterUserJson request)
         {
