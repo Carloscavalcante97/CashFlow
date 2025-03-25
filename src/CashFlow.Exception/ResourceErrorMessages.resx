@@ -148,7 +148,7 @@
     <value>The email is not valid</value>
   </data>
   <data name="INVALID_PASSWORD" xml:space="preserve">
-    <value>Password is invalid</value>
+    <value>Your password should be a minimum of 8 characters, containing at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., !, ?, *, .).</value>
   </data>
   <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
     <value>Email already registered</value>

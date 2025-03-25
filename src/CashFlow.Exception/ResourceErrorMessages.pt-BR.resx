@@ -136,19 +136,19 @@
     <value>Despesa não encontrada</value>
   </data>
   <data name="NAME_REQUIRED" xml:space="preserve">
-    <value>Nome é obrigatório</value>
+    <value>O nome é obrigatório</value>
   </data>
   <data name="EMAIL_REQUIRED" xml:space="preserve">
     <value>Email é obrigatório</value>
   </data>
   <data name="PASSWORD_REQUIRED" xml:space="preserve">
-    <value>Senha é obrigatório</value>
+    <value>Senha é obrigatórioa</value>
   </data>
   <data name="EMAIL_INVALID" xml:space="preserve">
     <value>O Email é inválido</value>
   </data>
   <data name="INVALID_PASSWORD" xml:space="preserve">
-    <value>Senha inválida</value>
+    <value>A sua palavra-passe deve ter um mínimo de 8 caracteres, contendo pelo menos uma letra maiúscula, uma letra minúscula, um número e um carácter especial (por exemplo, !, ?, *, .).</value>
   </data>
   <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
     <value>Email já cadastrado</value>

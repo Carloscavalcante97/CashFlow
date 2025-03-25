@@ -1,6 +1,7 @@
 ﻿using CashFlow.Application.UseCases.User.Register;
 using CashFlow.Communication.Reponses;
 using CashFlow.Communication.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CashFlow.Api.Controllers
@@ -8,6 +9,7 @@ namespace CashFlow.Api.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController : ControllerBase
     {
         [HttpPost]

@@ -21,7 +21,7 @@ namespace CashFlow.Application.UseCases.User
                 context.MessageFormatter.AppendArgument(ERROR_MESSAGE_KEY, ResourceErrorMessages.INVALID_PASSWORD);
                 return false;
             }
-            if(password.Length < 8)
+            if (password.Length < 8)
             {
                 context.MessageFormatter.AppendArgument(ERROR_MESSAGE_KEY, ResourceErrorMessages.INVALID_PASSWORD);
                 return false;
@@ -51,10 +51,13 @@ namespace CashFlow.Application.UseCases.User
 
         [GeneratedRegex(@"[0-9]+")]
         private static partial Regex Numbers();
+
         [GeneratedRegex(@"[A-Z]+")]
         private static partial Regex UppercaseLetters();
+
         [GeneratedRegex(@"[\!\&\*\?]+")]
         private static partial Regex SpecialCharacter();
+
         [GeneratedRegex(@"[a-z]+")]
         private static partial Regex LowercaseLetters();
     }
