@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CommunTestUtilities.Request
 {
-    public class RequestUserJsonBuilder
+    public class RequestRegisterUserJsonBuilder
     {
-        public static Faker<RequestRegisterUserJson> Build()
+        public static RequestRegisterUserJson Build()
         {
             return new Faker<RequestRegisterUserJson>()
                 .RuleFor(user => user.Name, faker => faker.Person.FirstName)

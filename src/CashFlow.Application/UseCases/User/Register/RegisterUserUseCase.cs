@@ -22,9 +22,10 @@ namespace CashFlow.Application.UseCases.User.Register
             IMapper mapper,
             IPasswordEncripter encripter,
             IUserReadOnlyRepository userRepository,
-            IUnitOfWork unitOfWork,
             IUserWriteOnlyRepository userWriteOnlyRepository,
-            IAcessTokenGenerator tokenGenerator)
+            IAcessTokenGenerator tokenGenerator,
+            IUnitOfWork unitOfWork
+            )
         {
             _mapper = mapper;
             _encripter = encripter;
@@ -55,6 +56,8 @@ namespace CashFlow.Application.UseCases.User.Register
             };
             return result;
         }
+
+
         private async Task Validate(RequestRegisterUserJson request)
         {
             var result = new userValidator().Validate(request);

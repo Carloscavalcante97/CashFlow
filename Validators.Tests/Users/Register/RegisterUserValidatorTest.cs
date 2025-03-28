@@ -13,7 +13,7 @@ namespace Validators.Tests.Users.Register;
         {
             //Arrange
             var validator = new userValidator();
-            var request = RequestUserJsonBuilder.Build().Generate();
+            var request = RequestRegisterUserJsonBuilder.Build();
             //Act
             var result = validator.Validate(request);
             //Assert
@@ -28,7 +28,7 @@ namespace Validators.Tests.Users.Register;
     {
         //Arrange
         var validator = new userValidator();
-        var request = RequestUserJsonBuilder.Build().Generate();
+        var request = RequestRegisterUserJsonBuilder.Build();
         request.Name = name;
         //Act
         var result = validator.Validate(request);
@@ -43,7 +43,7 @@ namespace Validators.Tests.Users.Register;
     public void Email_Is_Empty(string email)
     {
         var validator = new userValidator();
-        var request = RequestUserJsonBuilder.Build().Generate();
+        var request = RequestRegisterUserJsonBuilder.Build();
         request.Email = email;
         
         var result = validator.Validate(request);
@@ -55,13 +55,13 @@ namespace Validators.Tests.Users.Register;
     public void Error_Password_Empty()
     {
         var validator = new userValidator();
-        var request = RequestUserJsonBuilder.Build().Generate();
+        var request = RequestRegisterUserJsonBuilder.Build();
         request.Password = string.Empty;
 
         var result = validator.Validate(request);
         Console.WriteLine(result.Errors);
         result.IsValid.Should().BeFalse();
-        result.Errors.Should().ContainSingle().And.Contain(e => e.ErrorMessage.Contains(ResourceErrorMessages.INVALID_PASSWORD));
+        result.Errors.Should().ContainSingle().And.Contain(e => e.ErrorMessage.Equals(ResourceErrorMessages.INVALID_PASSWORD));
     }
 }
 
