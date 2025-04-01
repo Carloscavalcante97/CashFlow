@@ -9,16 +9,21 @@ using CashFlow.Domain.Security.Cryptography;
 using CashFlow.Domain.Repositories.User;
 using CashFlow.Domain.Security.Tokens;
 using CashFlow.Infrastructure.Security.Tokens;
+using CashFlow.Infrastructure.Extensions;
 namespace CashFlow.Infrastructure
 {
     public static class DependencyInjectionExtension
     {
         public static void AddInfrasctruture(this IServiceCollection services, IConfiguration configuration)
         {
-            AddRepositories(services);
-            AddDbContext(services, configuration);
+            AddRepositories(services);          
             AddHasher(services);
             AddToken(services, configuration);
+
+            if(configuration.IsTestEnvironment() == false)
+            {
+                AddDbContext(services, configuration);
+            }
         }
         private static void AddToken(IServiceCollection services, IConfiguration configuration)
         {
@@ -39,7 +44,7 @@ namespace CashFlow.Infrastructure
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("Connection");
-            var serverVersion = new MySqlServerVersion(new Version(8, 0, 40));
+            var serverVersion = ServerVersion.AutoDetect(connectionString);
             services.AddDbContext<CashFlowDbContext>(config => config.UseMySql(connectionString, serverVersion));
         }
         private static void AddHasher(IServiceCollection services)
