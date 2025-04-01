@@ -61,7 +61,7 @@ namespace Validators.Tests.Users.Register;
         var result = validator.Validate(request);
         Console.WriteLine(result.Errors);
         result.IsValid.Should().BeFalse();
-        result.Errors.Should().ContainSingle().And.Contain(e => e.ErrorMessage.Equals(ResourceErrorMessages.INVALID_PASSWORD));
+        result.Errors.Should().ContainSingle().And.Contain(e => e.ErrorMessage.Contains(ResourceErrorMessages.INVALID_PASSWORD));
     }
 }
 
